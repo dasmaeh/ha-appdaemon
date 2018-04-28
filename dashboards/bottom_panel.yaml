@@ -1,0 +1,44 @@
+load_main_panel:
+    widget_type: navigate
+#    title: Übersicht
+    icon_inactive: mdi-home
+    dashboard: MainPanel
+load_livingroom_panel:
+    widget_type: navigate
+#    title: Wohnzimmer
+    icon_inactive: mdi-sofa 
+    dashboard: LivingroomPanel
+load_kitchen_panel:
+    widget_type: navigate
+#    title: Küche
+    icon_inactive: mdi-silverware
+    dashboard: KitchenPanel
+load_bedroom_panel:
+    widget_type: navigate
+#    title: Schlafzimmer
+    icon_inactive: mdi-hotel
+    dashboard: BedroomPanel
+load_bathroom_panel:
+    widget_type: navigate
+#    title: Bad
+#    icon_inactive: mdi-water-pump
+    icon_inactive: fa-bath
+    dashboard: BathroomPanel
+load_gallery_panel:
+    widget_type: navigate
+#    title: Galerie
+#    icon_inactive: mdi-desktop-classic
+    icon_inactive: mdi-stairs
+    dashboard: GalleryPanel
+load_weather_panel:
+    widget_type: navigate
+#    title: Wetter
+    icon_inactive: mdi-weather-partlycloudy
+    dashboard: KitchenPanel
+reload:
+    widget_type: reload
+    
+
+
+layout: 
+- load_main_panel, load_livingroom_panel, load_kitchen_panel, load_bedroom_panel, load_bathroom_panel, load_gallery_panel, load_weather_panel, reload

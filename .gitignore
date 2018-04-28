@@ -1,0 +1,4 @@
+compiled/*
+!compiled/.gitkeep
+secrets.yaml
+.remote-sync.json

@@ -1,0 +1,131 @@
+#
+# Main arguments, all optional
+#
+title: Main Panel
+widget_dimensions: [120, 120]
+# widget_size: [1,1]
+widget_margins: [5, 5]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+    namespace: default
+
+layout:
+    - clock(2x1), household_paper,household_kehrwoche
+    - label(2x1)
+    -
+    - sonos_flat_cover(2x2), sonos_flat_playing(3x1), sonos_flat_playing_next(2x1),load_sonos_panel
+    - sonos_group_all, sonos_flat_swr3
+    - include: bottom_panel
+
+
+
+
+clock:
+    widget_type: clock
+    time_format: "24hr"
+    date_format_country: "de"
+    date_format_options:
+        weekday: "long"
+        day: "numeric"
+        month: "numeric"
+        year: "numeric"
+season:
+    widget_type: sensor
+    title: Jahreszeit
+    entity: sensor.season
+    state_map:
+      "spring": "Frühling"
+      "summer": "Sommer"
+      "autumn": "Herbst"
+      "winter": "Winter"
+    text_style: "font-size:300%; color:#4E88A1"
+weather_summary:
+    widget_type: weather_summary
+    entity: sensor.dark_sky_summary
+
+household_paper:
+    widget_type: icon
+    entity: calendar.haushalt_altpapier
+#    state_text: 1
+    icons:
+      "on":
+        icon: mdi-delete
+        style: "color:#4E88A1;"
+      "off":
+        icon: mdi-delete-empty
+        style: "color:#B8B6B3"
+household_kehrwoche:
+    widget_type: icon
+    entity: calendar.haushalt_hausordnung
+#    state_text: 1
+    icons:
+      "on":
+        icon: mdi-broom
+        style: "color:#4E88A1;"
+      "off":
+        icon: mdi-broom
+        style: "color:#B8B6B3"
+
+label:
+    widget_type: label
+    text: Übersicht
+presence_somebody:
+    widget_type: binary_sensor
+    entity: binary_sensor.presence_somebody_home
+    title: Jemand da?
+    icon_on: mdi-home
+    icon_off: mdi-home-outline
+presence_cornelia:
+    widget_type: binary_sensor
+    entity: binary_sensor.presence_cornelia
+    title: Cornelia
+    icon_on: mdi-home-account
+    icon_off: mdi-home-outline
+presence_jan:
+    widget_type: binary_sensor
+    entity: binary_sensor.presence_jan
+    title: Jan
+    icon_on: mdi-home-account
+    icon_off: mdi-home-outline
+
+sonos_flat_playing:
+  widget_type: sensor
+  title: "Sonos spielt"
+  entity: sensor.sonos_flat_playing
+sonos_flat_playing_next:
+  widget_type: sensor
+  title: "als nächstes"
+  entity: sensor.sonos_flat_playing_next
+
+sonos_play_pause_button:
+  widget_type: switch
+  entity: switch.sonos_flat_play
+  icon_on: fa-pause
+  icon_off: fa-play
+
+sonos_flat_cover:
+    widget_type: iframe
+#    title: Radar
+    refresh: 1
+    frame_style: ""
+    img_list:
+      - http://10.1.0.21:8123/local/sonos_img/sonos_flat_media_picture.jpg
+sonos_group_all:
+  widget_type: switch
+  entity: switch.sonos_group_all
+  icon_on: mdi-group
+  icon_off: mdi-ungroup
+
+sonos_flat_swr3:
+  widget_type: script
+  entity: script.sonos_flat_play_swr3
+  title: SWR3
+  icon_on: mdiradio
+  icon_off: mdi-radio
+load_sonos_panel:
+  widget_type: navigate
+  icon_inactive: mdi-speaker
+  dashboard: MusicPanel

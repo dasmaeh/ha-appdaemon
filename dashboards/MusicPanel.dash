@@ -1,0 +1,97 @@
+#
+# Main arguments, all optional
+#
+title: Music Panel
+widget_dimensions: [120, 120]
+# widget_size: [1,1]
+widget_margins: [5, 5]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+    namespace: default
+
+layout:
+    - clock(2x1), household_paper,household_kehrwoche
+    - sonos_livingroom_cover(2x2)
+    -
+    - sonos_livingroom_playing(2x1)
+    - sonos_livingroom_play_pause_button
+    - include: bottom_panel
+
+clock:
+    widget_type: clock
+    time_format: "24hr"
+    date_format_country: "de"
+    date_format_options:
+        weekday: "long"
+        day: "numeric"
+        month: "numeric"
+        year: "numeric"
+household_paper:
+    widget_type: icon
+    entity: calendar.haushalt_altpapier
+#    state_text: 1
+    icons:
+      "on":
+        icon: mdi-delete
+        style: "color:#4E88A1;"
+      "off":
+        icon: mdi-delete-empty
+        style: "color:#B8B6B3"
+household_kehrwoche:
+    widget_type: icon
+    entity: calendar.haushalt_hausordnung
+#    state_text: 1
+    icons:
+      "on":
+        icon: mdi-broom
+        style: "color:#4E88A1;"
+      "off":
+        icon: mdi-broom
+        style: "color:#B8B6B3"
+
+
+livingroom_label:
+  widget_type: label
+  text: "Wohnzimmer"
+  text_style: "font-size:50%"
+sonos_livingroom_playing:
+  widget_type: sensor
+  title: "Wohnzimmer"
+  entity: sensor.sonos_livingroom_playing
+sonos_flat_playing_next:
+  widget_type: sensor
+  title: "als nächstes"
+  entity: sensor.sonos_flat_playing_next
+sonos_livingroom_cover:
+    widget_type: iframe
+#    title: Radar
+    refresh: 1
+    frame_style: ""
+    img_list:
+      - http://10.1.0.21:8123/local/sonos_img/sonos_livingroom_media_picture.jpg
+sonos_livingroom_play_pause_button:
+  widget_type: switch
+  entity: switch.sonos_livingroom_play_pause
+  icon_on: fa-pause
+  icon_off: fa-play
+
+sonos_kitchen_play_pause_button:
+  widget_type: switch
+  entity: switch.sonos_livingroom_play_pause
+  icon_on: fa-pause
+  icon_off: fa-play
+
+
+sonos_bedroom_play_pause_button:
+  widget_type: switch
+  entity: switch.sonos_bedroom_play_pause
+  icon_on: fa-pause
+  icon_off: fa-play
+
+load_sonos_panel:
+  widget_type: navigate
+  icon_inactive: mdi-speaker
+  dashboard: MusicPanel

@@ -1,0 +1,87 @@
+#
+# Main arguments, all optional
+#
+title: Wohnzimmer
+widget_dimensions: [120, 120]
+# widget_size: [1,1]
+widget_margins: [5, 5]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+    namespace: default
+
+layout:
+    - clock(2x1)
+    - label(3x1)
+    -
+    - sonos_cover(2x2), sonos_playing(3x1), sonos_playing_next(2x1),load_sonos_panel
+    - sonos_play_pause_button, sonos_previous, sonos_next, sonos_livingroom_volume, sonos_livingroom_swr3
+    - include: bottom_panel
+
+
+
+clock:
+    widget_type: clock
+    time_format: "24hr"
+    date_format_country: "de"
+    date_format_options:
+        weekday: "long"
+        day: "numeric"
+        month: "numeric"
+        year: "numeric"
+label:
+    widget_type: label
+    text: Wohnzimmer
+
+sonos_playing:
+  widget_type: sensor
+  title: "Sonos spielt"
+  entity: sensor.sonos_livingroom_playing
+sonos_playing_next:
+  widget_type: sensor
+  title: "als nächstes"
+  entity: sensor.sonos_livingroom_playing_next
+
+sonos_play_pause_button:
+  widget_type: switch
+  entity: switch.sonos_livingroom_play_pause
+  icon_on: fa-pause
+  icon_off: fa-play
+sonos_previous:
+  widget_type: script
+  entity: script.sonos_livingroom_previous
+  icon_on: mdi-skip-previous
+  icon_off: mdi-skip-previous
+sonos_next:
+  widget_type: script
+  entity: script.sonos_livingroom_next
+  icon_on: mdi-skip-next
+  icon_off: mdi-skip-next
+sonos_cover:
+    widget_type: iframe
+#    title: Radar
+    refresh: 1
+    frame_style: ""
+    img_list:
+      - http://10.1.0.21:8123/local/sonos_img/sonos_livingroom_media_picture.jpg
+sonos_livingroom_volume:
+  widget_type: input_slider
+  entity: input_number.sonos_livingroom_volume
+  title: "Lautstärke"
+  units: "%"
+  step: 5
+
+sonos_livingroom_swr3:
+  widget_type: script
+  entity: script.sonos_livingroom_play_swr3
+  title: SWR3
+  icon_on: mdiradio
+  icon_off: mdi-radio
+
+
+load_sonos_panel:
+  widget_type: navigate
+  icon_inactive: mdi-speaker
+  dashboard: MusicPanel

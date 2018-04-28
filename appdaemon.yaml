@@ -1,0 +1,13 @@
+secrets: /conf/secrets.yaml
+log:
+  logfile: STDOUT
+  errorfile: STDERR
+appdaemon:
+  threads: 10
+  plugins:
+    HASS:
+      type: hass
+      ha_url: http://10.1.0.21:8123
+      ha_key: !secret ha_api_key
+hadashboard:
+  dash_url: http://ha2.cbjck.de:5050
