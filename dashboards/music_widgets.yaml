@@ -1,0 +1,346 @@
+# Flat related widgets
+sonos_flat_cover:
+  widget_type: iframe
+  refresh: 1
+  frame_style: ""
+  img_list:
+    - http://10.1.0.21:8123/local/sonos_img/sonos_flat_media_picture.jpg
+sonos_flat_playing:
+  widget_type: sensor
+  title: "Sonos spielt"
+  entity: sensor.sonos_flat_playing
+sonos_flat_playing_next:
+  widget_type: sensor
+  title: "als nächstes"
+  entity: sensor.sonos_flat_playing_next
+sonos_play_pause_button:
+  widget_type: switch
+  entity: switch.sonos_flat_play
+  icon_on: fa-pause
+  icon_off: fa-play
+
+sonos_group_all:
+  widget_type: switch
+  entity: switch.sonos_group_all
+  title: "Alle"
+  icon_on: mdi-group
+  icon_off: mdi-ungroup
+sonos_flat_volume_default:
+  widget_type: script
+  entity: script.sonos_flat_volume_default
+  icon_on: mdi-volume-medium
+  icon_off: mdi-volume-medium
+sonos_flat_swr3:
+  widget_type: script
+  entity: script.sonos_flat_play_swr3
+  title: SWR3
+  title2: "Überall"
+  icon_on: mdi-radio
+  icon_off: mdi-radio
+
+
+# Livingroom related widgets:
+sonos_livingroom_playing:
+  widget_type: sensor
+  title: "Wohnzimmer"
+  entity: sensor.sonos_livingroom_playing
+sonos_livingroom_playing_next:
+  widget_type: sensor
+  title: "als nächstes"
+  entity: sensor.sonos_livingroom_playing_next
+sonos_livingroom_cover:
+    widget_type: iframe
+    refresh: 1
+    frame_style: ""
+    img_list:
+      - http://10.1.0.21:8123/local/sonos_img/sonos_livingroom_media_picture.jpg
+sonos_livingroom_play_pause_button:
+  widget_type: switch
+  entity: switch.sonos_livingroom_play_pause
+  icon_on: mdi-pause
+  icon_off: mdi-play
+sonos_livingroom_previous:
+  widget_type: script
+  entity: script.sonos_livingroom_previous
+  icon_on: mdi-skip-previous
+  icon_off: mdi-skip-previous
+sonos_livingroom_next:
+  widget_type: script
+  entity: script.sonos_livingroom_next
+  icon_on: mdi-skip-next
+  icon_off: mdi-skip-next
+sonos_livingroom_volume:
+  widget_type: input_slider
+  entity: input_number.sonos_livingroom_volume
+  title: "Lautstärke"
+  units: "%"
+  step: 5
+sonos_livingroom_volume_default:
+  widget_type: script
+  entity: script.sonos_livingroom_volume_default
+  icon_on: mdi-volume-medium
+  icon_off: mdi-volume-medium
+sonos_group_livingroom_kitchen:
+  widget_type: switch
+  entity: switch.sonos_group_livingroom_kitchen
+  title: "+Küche"
+  icon_on: mdi-group
+  icon_off: mdi-ungroup
+sonos_group_livingroom_bedroom:
+  widget_type: switch
+  entity: switch.sonos_group_livingroom_bedroom
+  title: "+Schlafz."
+  icon_on: mdi-group
+  icon_off: mdi-ungroup
+# Favorites
+sonos_livingroom_swr3_short:
+  widget_type: script
+  entity: script.sonos_livingroom_play_swr3
+  title: SWR3
+  icon_on: mdi-radio
+  icon_off: mdi-radio
+sonos_livingroom_swr3:
+  widget_type: scripttitled
+  entity: script.sonos_livingroom_play_swr3
+  title: SWR3
+  icon_on: mdi-radio
+  icon_off: mdi-radio
+
+
+# Kitchen related widgets:
+sonos_kitchen_playing:
+  widget_type: sensor
+  title: "Küche"
+  entity: sensor.sonos_kitchen_playing
+sonos_kitchen_playing_next:
+  widget_type: sensor
+  title: "als nächstes"
+  entity: sensor.sonos_kitchen_playing_next
+sonos_kitchen_cover:
+  widget_type: iframe
+  refresh: 1
+  frame_style: ""
+  img_list:
+    - http://10.1.0.21:8123/local/sonos_img/sonos_kitchen_media_picture.jpg
+sonos_kitchen_play_pause_button:
+  widget_type: switch
+  entity: switch.sonos_kitchen_play_pause
+  icon_on: mdi-pause
+  icon_off: mdi-play
+sonos_kitchen_previous:
+  widget_type: script
+  entity: script.sonos_kitchen_previous
+  icon_on: mdi-skip-previous
+  icon_off: mdi-skip-previous
+sonos_kitchen_next:
+  widget_type: script
+  entity: script.sonos_kitchen_next
+  icon_on: mdi-skip-next
+  icon_off: mdi-skip-next
+sonos_kitchen_volume:
+  widget_type: input_slider
+  entity: input_number.sonos_kitchen_volume
+  title: "Lautstärke"
+  units: "%"
+  step: 5
+sonos_kitchen_volume_default:
+  widget_type: script
+  entity: script.sonos_kitchen_volume_default
+  icon_on: mdi-volume-medium
+  icon_off: mdi-volume-medium
+sonos_group_kitchen_livingroom:
+  widget_type: switch
+  entity: switch.sonos_group_kitchen_livingroom
+  title: "+Wohnz."
+  icon_on: mdi-group
+  icon_off: mdi-ungroup
+# Favourites
+sonos_kitchen_sundaymorning:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_sundaymorning
+  title: Deezer
+  title2: Sunday Morning
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_classicalbreakfast:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_classicalbreakfast
+  title: Deezer
+  title2: Classical Breakfast
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_cookingtonight:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_cookingtonight
+  title: Deezer
+  title2: Cooking Tonight
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_cuisinerenmusique:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_cuisinerenmusique
+  title: Deezer
+  title2: Cuisiner En Musique
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_cuisinerenmusiqueherve:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_cuisinerenmusiqueherve
+  title: Deezer
+  title2: Cuisiner en Musique (Herve)
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_letscook:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_letscook
+  title: Deezer
+  title2: Let's Cook
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_classicaldinner:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_classicaldinner
+  title: Deezer
+  title2: Classical Dinner
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_dinerentreamis:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_dinerentreamis
+  title: Deezer
+  title2: Diner entre amis
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_dinerreussi:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_dinerreussi
+  title: Deezer
+  title2: Diner reussi
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_dinerromantique:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_dinerromantique
+  title: Deezer
+  title2: Diner Romantique
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_dinnerwithfriends:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_dinnerwithfriends
+  title: Deezer
+  title2: Dinner with friends
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_etentjemetvrienden:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_etentjemetvrienden
+  title: Deezer
+  title2: Etentje met Vrienden
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_jazzydinner:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_jazzydinner
+  title: Deezer
+  title2: Jazzy Dinner
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_repasenfamille:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_repasenfamille
+  title: Deezer
+  title2: Repas en famille
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_motivationmenage:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_motivationmenage
+  title: Deezer
+  title2: Motivation pour la menage
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
+sonos_kitchen_swr3_short:
+  widget_type: script
+  entity: script.sonos_kitchen_play_swr3
+  title: Radio
+  title2: SWR3
+  icon_on: mdi-radio
+  icon_off: mdi-radio
+sonos_kitchen_swr3:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_swr3
+  title: Radio
+  title2: SWR3
+  icon_on: mdi-radio
+  icon_off: mdi-radio
+
+# Bedroom related widgets:
+sonos_bedroom_playing:
+  widget_type: sensor
+  title: "Schlafzimmer"
+  entity: sensor.sonos_bedroom_playing
+sonos_bedroom_playing_next:
+  widget_type: sensor
+  title: "als nächstes"
+  entity: sensor.sonos_bedroom_playing_next
+sonos_bedroom_cover:
+  widget_type: iframe
+  refresh: 1
+  frame_style: ""
+  img_list:
+    - http://10.1.0.21:8123/local/sonos_img/sonos_bedroom_media_picture.jpg
+sonos_bedroom_play_pause_button:
+  widget_type: switch
+  entity: switch.sonos_bedroom_play_pause
+  icon_on: mdi-pause
+  icon_off: mdi-play
+sonos_bedroom_previous:
+  widget_type: script
+  entity: script.sonos_bedroom_previous
+  icon_on: mdi-skip-previous
+  icon_off: mdi-skip-previous
+sonos_bedroom_next:
+  widget_type: script
+  entity: script.sonos_bedroom_next
+  icon_on: mdi-skip-next
+  icon_off: mdi-skip-next
+sonos_bedroom_volume:
+  widget_type: input_slider
+  entity: input_number.sonos_bedroom_volume
+  title: "Lautstärke"
+  units: "%"
+  step: 5
+sonos_bedroom_volume_default:
+  widget_type: script
+  entity: script.sonos_bedroom_volume_default
+  icon_on: mdi-volume-medium
+  icon_off: mdi-volume-medium
+sonos_group_bedroom_livingroom:
+  widget_type: switch
+  entity: switch.sonos_group_bedroom_livingroom
+  title: "+Wohnz."
+  icon_on: mdi-group
+  icon_off: mdi-ungroup
+# Favorites
+sonos_bedroom_swr3_short:
+  widget_type: script
+  entity: script.sonos_bedroom_play_swr3
+  title: Radio
+  title2: SWR3
+  icon_on: mdi-radio
+  icon_off: mdi-radio
+sonos_bedroom_swr3:
+  widget_type: scripttitled
+  entity: script.sonos_bedroom_play_swr3
+  title: Radio
+  title2: SWR3
+  icon_on: mdi-radio
+  icon_off: mdi-radio
+sonos_bedroom_test:
+  widget_type: scripttitled
+  entity: script.sonos_bedroom_play_swr3
+  title: Deezer
+  title2: "Diner entre amis"
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music

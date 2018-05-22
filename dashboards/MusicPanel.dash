@@ -2,10 +2,10 @@
 # Main arguments, all optional
 #
 title: Music Panel
-widget_dimensions: [120, 120]
+widget_dimensions: [90, 90]
 # widget_size: [1,1]
 widget_margins: [5, 5]
-columns: 8
+columns: 13
 global_parameters:
     use_comma: 0
     precision: 1
@@ -13,13 +13,19 @@ global_parameters:
     namespace: default
 
 layout:
-    - clock(2x1), household_paper,household_kehrwoche
-    - sonos_livingroom_cover(2x2)
+    - include: music_widgets
+    - clock(2x1), spacer(9x1), household_paper,household_kehrwoche
+    - sonos_livingroom_playing(4x1), sonos_kitchen_playing(4x1), sonos_bedroom_playing(4x1), sonos_group_all
+    - sonos_livingroom_cover(3x3), sonos_group_livingroom_kitchen, sonos_kitchen_cover(3x3), sonos_group_kitchen_livingroom, sonos_bedroom_cover(3x3), sonos_group_bedroom_livingroom, load_music_panel_2(1x3)
+    - spacer, spacer, spacer(1x2)
     -
-    - sonos_livingroom_playing(2x1)
-    - sonos_livingroom_play_pause_button
+    - sonos_livingroom_playing_next(2x1), spacer, sonos_livingroom_swr3_short, sonos_kitchen_playing_next(2x1), spacer, sonos_kitchen_swr3_short, sonos_bedroom_playing_next(2x1), spacer, sonos_bedroom_swr3_short, sonos_flat_swr3
+    - sonos_livingroom_previous, sonos_livingroom_play_pause_button, sonos_livingroom_next, sonos_livingroom_volume, sonos_kitchen_previous, sonos_kitchen_play_pause_button, sonos_kitchen_next, sonos_kitchen_volume, sonos_bedroom_previous, sonos_bedroom_play_pause_button, sonos_bedroom_next, sonos_bedroom_volume, sonos_flat_volume_default
     - include: bottom_panel
 
+spacer:
+  widget_type: label
+  title: " "
 clock:
     widget_type: clock
     time_format: "24hr"
@@ -52,46 +58,9 @@ household_kehrwoche:
         icon: mdi-broom
         style: "color:#B8B6B3"
 
-
-livingroom_label:
-  widget_type: label
-  text: "Wohnzimmer"
-  text_style: "font-size:50%"
-sonos_livingroom_playing:
-  widget_type: sensor
-  title: "Wohnzimmer"
-  entity: sensor.sonos_livingroom_playing
-sonos_flat_playing_next:
-  widget_type: sensor
-  title: "als nächstes"
-  entity: sensor.sonos_flat_playing_next
-sonos_livingroom_cover:
-    widget_type: iframe
-#    title: Radar
-    refresh: 1
-    frame_style: ""
-    img_list:
-      - http://10.1.0.21:8123/local/sonos_img/sonos_livingroom_media_picture.jpg
-sonos_livingroom_play_pause_button:
-  widget_type: switch
-  entity: switch.sonos_livingroom_play_pause
-  icon_on: fa-pause
-  icon_off: fa-play
-
-sonos_kitchen_play_pause_button:
-  widget_type: switch
-  entity: switch.sonos_livingroom_play_pause
-  icon_on: fa-pause
-  icon_off: fa-play
-
-
-sonos_bedroom_play_pause_button:
-  widget_type: switch
-  entity: switch.sonos_bedroom_play_pause
-  icon_on: fa-pause
-  icon_off: fa-play
-
-load_sonos_panel:
+load_music_panel_2:
   widget_type: navigate
-  icon_inactive: mdi-speaker
-  dashboard: MusicPanel
+  icon_inactive: mdi-chevron-right
+  dashboard: MusicPanel2
+  icon_active_style: " top:45%!important;"
+  icon_inactive_style: "top:45%!important;"

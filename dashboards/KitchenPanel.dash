@@ -1,7 +1,7 @@
 #
 # Main arguments, all optional
 #
-title: Wohnzimmer
+title: Küche
 widget_dimensions: [90, 90]
 # widget_size: [1,1]
 widget_margins: [5, 5]
@@ -18,9 +18,9 @@ layout:
     - label(3x1)
     -
     -
-    - sonos_livingroom_cover(3x3), sonos_livingroom_playing(3x1), sonos_group_livingroom_bedroom
-    - sonos_livingroom_playing_next(3x1), sonos_group_livingroom_kitchen
-    - sonos_livingroom_previous, sonos_livingroom_play_pause_button, sonos_livingroom_next, sonos_livingroom_volume, sonos_livingroom_swr3
+    - sonos_kitchen_cover(3x3), sonos_kitchen_playing(3x1), sonos_group_kitchen_livingroom, sonos_kitchen_cookingtonight(2x1), sonos_kitchen_dinnerwithfriends(2x1), sonos_kitchen_sundaymorning(2x1)
+    - sonos_kitchen_playing_next(3x1), spacer, sonos_kitchen_letscook(2x1), sonos_kitchen_dinerentreamis(2x1), sonos_kitchen_motivationmenage(2x1)
+    - sonos_kitchen_previous, sonos_kitchen_play_pause_button, sonos_kitchen_next, sonos_kitchen_volume, sonos_kitchen_cuisinerenmusique(2x1), sonos_kitchen_dinerromantique(2x1), sonos_kitchen_swr3(2x1)
     - include: bottom_panel
 
 spacer:
@@ -37,7 +37,7 @@ clock:
         year: "numeric"
 label:
     widget_type: label
-    text: Wohnzimmer
+    text: "Küche"
 
 
 load_sonos_panel:

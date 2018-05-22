@@ -1,3 +1,10 @@
+layout:
+- load_main_panel, load_livingroom_panel, load_kitchen_panel, load_bedroom_panel, load_bathroom_panel, load_gallery_panel, spacer(4x1), load_music_panel, load_weather_panel, reload
+
+
+spacer:
+  widget_type: label
+  title: " "
 load_main_panel:
     widget_type: navigate
 #    title: Übersicht
@@ -6,7 +13,7 @@ load_main_panel:
 load_livingroom_panel:
     widget_type: navigate
 #    title: Wohnzimmer
-    icon_inactive: mdi-sofa 
+    icon_inactive: mdi-sofa
     dashboard: LivingroomPanel
 load_kitchen_panel:
     widget_type: navigate
@@ -30,6 +37,10 @@ load_gallery_panel:
 #    icon_inactive: mdi-desktop-classic
     icon_inactive: mdi-stairs
     dashboard: GalleryPanel
+load_music_panel:
+  widget_type: navigate
+  icon_inactive: mdi-speaker
+  dashboard: MusicPanel
 load_weather_panel:
     widget_type: navigate
 #    title: Wetter
@@ -37,8 +48,3 @@ load_weather_panel:
     dashboard: KitchenPanel
 reload:
     widget_type: reload
-    
-
-
-layout: 
-- load_main_panel, load_livingroom_panel, load_kitchen_panel, load_bedroom_panel, load_bathroom_panel, load_gallery_panel, load_weather_panel, reload

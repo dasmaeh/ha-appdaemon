@@ -2,10 +2,10 @@
 # Main arguments, all optional
 #
 title: Main Panel
-widget_dimensions: [120, 120]
+widget_dimensions: [90, 90]
 # widget_size: [1,1]
 widget_margins: [5, 5]
-columns: 8
+columns: 13
 global_parameters:
     use_comma: 0
     precision: 1
@@ -13,8 +13,11 @@ global_parameters:
     namespace: default
 
 layout:
-    - clock(2x1), household_paper,household_kehrwoche
-    - label(2x1)
+    - include: music_widgets
+    - clock(2x1), spacer(9x1), household_paper,household_kehrwoche
+    - label(3x1)
+    -
+    -
     -
     - sonos_flat_cover(2x2), sonos_flat_playing(3x1), sonos_flat_playing_next(2x1),load_sonos_panel
     - sonos_group_all, sonos_flat_swr3
@@ -22,7 +25,9 @@ layout:
 
 
 
-
+spacer:
+  widget_type: label
+  title: " "
 clock:
     widget_type: clock
     time_format: "24hr"
@@ -90,42 +95,3 @@ presence_jan:
     title: Jan
     icon_on: mdi-home-account
     icon_off: mdi-home-outline
-
-sonos_flat_playing:
-  widget_type: sensor
-  title: "Sonos spielt"
-  entity: sensor.sonos_flat_playing
-sonos_flat_playing_next:
-  widget_type: sensor
-  title: "als nächstes"
-  entity: sensor.sonos_flat_playing_next
-
-sonos_play_pause_button:
-  widget_type: switch
-  entity: switch.sonos_flat_play
-  icon_on: fa-pause
-  icon_off: fa-play
-
-sonos_flat_cover:
-    widget_type: iframe
-#    title: Radar
-    refresh: 1
-    frame_style: ""
-    img_list:
-      - http://10.1.0.21:8123/local/sonos_img/sonos_flat_media_picture.jpg
-sonos_group_all:
-  widget_type: switch
-  entity: switch.sonos_group_all
-  icon_on: mdi-group
-  icon_off: mdi-ungroup
-
-sonos_flat_swr3:
-  widget_type: script
-  entity: script.sonos_flat_play_swr3
-  title: SWR3
-  icon_on: mdiradio
-  icon_off: mdi-radio
-load_sonos_panel:
-  widget_type: navigate
-  icon_inactive: mdi-speaker
-  dashboard: MusicPanel

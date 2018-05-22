@@ -1,0 +1,4 @@
+[submodule "custom_css/hygge-small"]
+	path = custom_css/hygge-small
+	url = git@github.com:dasmaeh/hygge.git
+        branch = small
