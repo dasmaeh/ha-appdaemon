@@ -1,7 +1,7 @@
 #
 # Main arguments, all optional
 #
-title: Main Panel
+title: Übersicht
 widget_dimensions: [90, 90]
 # widget_size: [1,1]
 widget_margins: [5, 5]
@@ -14,8 +14,8 @@ global_parameters:
 
 layout:
     - include: music_widgets
-    - clock(2x1), spacer(9x1), household_paper,household_kehrwoche
-    - label(3x1)
+    - label_home_icon(1x1), clock(2x1), spacer(8x1), household_paper,household_kehrwoche
+    - 
     -
     -
     -
@@ -37,6 +37,12 @@ clock:
         day: "numeric"
         month: "numeric"
         year: "numeric"
+
+label_home_icon:
+  widget_type: navigate
+  icon_inactive: mdi-home
+  dashboard: MainPanel
+
 season:
     widget_type: sensor
     title: Jahreszeit

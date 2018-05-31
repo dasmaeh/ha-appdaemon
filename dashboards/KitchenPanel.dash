@@ -14,7 +14,7 @@ global_parameters:
 
 layout:
     - include: music_widgets
-    - clock(2x1)
+    - label_kitchen_icon(1x1), clock(2x1)
     - label(3x1)
     -
     -
@@ -38,7 +38,13 @@ clock:
 label:
     widget_type: label
     text: "Küche"
+    icon_on: mdi-cutlery
 
+label_kitchen_icon:
+    widget_type: navigate
+#    title: Küche
+    icon_inactive: mdi-silverware
+    dashboard: KitchenPanel
 
 load_sonos_panel:
   widget_type: navigate
