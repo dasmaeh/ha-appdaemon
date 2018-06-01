@@ -1,4 +1,4 @@
-secrets: /conf/secrets.yaml
+secrets: /config/secrets.yaml
 log:
   logfile: STDOUT
   errorfile: STDERR

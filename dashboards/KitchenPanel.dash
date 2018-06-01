@@ -15,7 +15,7 @@ global_parameters:
 layout:
     - include: music_widgets
     - label_kitchen_icon(1x1), clock(2x1)
-    - label(3x1)
+    -
     -
     -
     - sonos_kitchen_cover(3x3), sonos_kitchen_playing(3x1), sonos_group_kitchen_livingroom, sonos_kitchen_cookingtonight(2x1), sonos_kitchen_dinnerwithfriends(2x1), sonos_kitchen_sundaymorning(2x1)
@@ -23,9 +23,7 @@ layout:
     - sonos_kitchen_previous, sonos_kitchen_play_pause_button, sonos_kitchen_next, sonos_kitchen_volume, sonos_kitchen_cuisinerenmusique(2x1), sonos_kitchen_dinerromantique(2x1), sonos_kitchen_swr3(2x1)
     - include: bottom_panel
 
-spacer:
-  widget_type: label
-  title: " "
+
 clock:
     widget_type: clock
     time_format: "24hr"
