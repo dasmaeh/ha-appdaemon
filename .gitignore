@@ -2,3 +2,4 @@ compiled/*
 !compiled/.gitkeep
 secrets.yaml
 .remote-sync.json
+__pycache__

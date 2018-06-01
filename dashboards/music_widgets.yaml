@@ -169,6 +169,13 @@ sonos_kitchen_classicalbreakfast:
   title2: Classical Breakfast
   icon_on: mdi-library-music
   icon_off: mdi-library-music
+sonos_kitchen_smellslikecoffee:
+  widget_type: scripttitled
+  entity: script.sonos_kitchen_play_smellslikecoffee
+  title: Deezer
+  title2: Smells Like Coffee
+  icon_on: mdi-library-music
+  icon_off: mdi-library-music
 sonos_kitchen_cookingtonight:
   widget_type: scripttitled
   entity: script.sonos_kitchen_play_cookingtonight
