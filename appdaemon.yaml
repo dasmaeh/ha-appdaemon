@@ -1,7 +1,10 @@
 secrets: /config/secrets.yaml
 log:
-  logfile: STDOUT
-  errorfile: STDERR
+  accessfile: /config/appdaemon/access.log
+  errorfile: /config/appdaemon/error.log
+  logfile: /config/appdaemon/appdaemon.log
+  log_generations: 3
+  log_size: 1000000
 appdaemon:
   threads: 10
   plugins:

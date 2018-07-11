@@ -2,3 +2,15 @@ hello_world:
   module: hello
   class: HelloWorld
 
+plant_notifications:
+ module: plant_notifications
+ class: PlantNotifications
+ plants:
+   dieffenbachia:
+      entity_id: plant.dieffenbachia
+      description_jan: Dieffenbachia
+      description_cornelia: "Die Pflanze mit den gemusterten Blättern links neben dem Fernseher"
+   spathiphyllum:
+      entity_id: plant.spathiphyllum
+      description_jan: Spathiphyllum
+      description_cornelia: "Die Pflanze mit den weißen Blüten im Flur"
