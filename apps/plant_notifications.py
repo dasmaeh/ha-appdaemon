@@ -6,7 +6,7 @@ class PlantNotifications(hass.Hass):
   def initialize(self):
     # Check plants regularly
     time = datetime.time(0, 0, 0)
-    self.run_minutely(self.check_plants, time) # Every minute, used for development
+    # self.run_minutely(self.check_plants, time) # Every minute, used for development
     self.run_hourly(self.check_plants, time) # Every hour, used for production
     # Check plants when somebody comes home
     self.listen_state(self.check_plants_coming_home, "binary_sensor.presence_jan", new='on')
