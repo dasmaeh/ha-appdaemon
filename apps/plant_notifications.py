@@ -41,7 +41,7 @@ class PlantNotifications(hass.Hass):
               self.log(self.args["plants"][plant]["description_jan"]+ problem)
               self.log(self.args["plants"][plant]["description_cornelia"]+ problem)
               # Check who is home to receive a note:
-              if( self.entities.sensor.presence_jan == 'home'):
+              if( self.entities.binary_sensor.presence_jan == 'home'):
                 self.call_service("script/notify_mqtt", target="jan", message=self.args["plants"][plant]["description_jan"]+problem)
-              elif( self.entities.sensor.presence_cornelia == 'home'):
+            elif( self.entities.binary_sensor.presence_cornelia == 'home'):
                 self.call_service("script/notify_mqtt", target="cornelia", message=self.args["plants"][plant]["description_cornelia"]+problem)
