@@ -6,11 +6,14 @@ class PlantNotifications(hass.Hass):
   def initialize(self):
     # Check plants regularly
     time = datetime.time(0, 0, 0)
-    # self.run_minutely(self.check_plants, time) # Every minute, used for development
+    #self.run_minutely(self.check_plants, time) # Every minute, used for development
     self.run_hourly(self.check_plants, time) # Every hour, used for production
     # Check plants when somebody comes home
     self.listen_state(self.check_plants_coming_home, "binary_sensor.presence_jan", new='on')
     self.listen_state(self.check_plants_coming_home, "binary_sensor.presence_cornelia", new='on')
+    # Check plants when somebody leaves bed
+    self.listen_state(self.check_plants_coming_home, "binary_sensor.bed_jan", new='off')
+    self.listen_state(self.check_plants_coming_home, "binary_sensor.bed_cornelia", new='off')
 
   # Callback function for state triggers
   def check_plants_coming_home(self, entity, attribute, old, new, kwargs):
@@ -41,7 +44,8 @@ class PlantNotifications(hass.Hass):
               self.log(self.args["plants"][plant]["description_jan"]+ problem)
               self.log(self.args["plants"][plant]["description_cornelia"]+ problem)
               # Check who is home to receive a note:
-              if( self.entities.binary_sensor.presence_jan == 'home'):
+              self.log(self.entities.binary_sensor.presence_jan.state)
+              if( self.entities.binary_sensor.presence_jan.state == 'on' and self.entities.binary_sensor.bed_jan.state == 'off' ):
                 self.call_service("script/notify_mqtt", target="jan", message=self.args["plants"][plant]["description_jan"]+problem)
-            elif( self.entities.binary_sensor.presence_cornelia == 'home'):
+            elif( self.entities.binary_sensor.presence_cornelia.state == 'on' and self.entities.binary_sensor.bed_cornelia.state == 'off' ):
                 self.call_service("script/notify_mqtt", target="cornelia", message=self.args["plants"][plant]["description_cornelia"]+problem)
